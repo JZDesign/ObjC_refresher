@@ -8,7 +8,7 @@
 
 
 /*
- 
+ // rss item for reference
  <item>
      <title>Ann Coulter’s Delta Snafu Brings Twitter Together In This Week’s News Recap</title>
      <description>The commentator Ann Coulter's dust-up with Delta finally gave the internet a reason to rally behind an airline.</description>
@@ -24,6 +24,7 @@
  */
 
 #import "RSSViewController.h"
+
 @interface RSSViewController () {
     
     NSXMLParser *parser;
@@ -31,7 +32,6 @@
     NSMutableDictionary *item;
     NSMutableString *title;
     NSMutableString *link;
-    
     NSString *element;
     
 }
@@ -68,6 +68,7 @@
 # pragma MARK: TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // open link in safari
     UIApplication *app = [UIApplication sharedApplication];
     NSURL *url = [NSURL URLWithString:feeds[indexPath.row][@"link"]];
     [app openURL:url options:nil completionHandler:nil];
@@ -104,6 +105,7 @@
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
     element = elementName;
+    // if rss item found init objects
     if ([element isEqualToString:@"item"]) {
         item = [[NSMutableDictionary alloc] init];
         title = [[NSMutableString alloc] init];
@@ -112,6 +114,7 @@
 }
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    // set values
     if ([elementName isEqualToString:@"item"]) {
         [item setObject:title forKey:@"title"];
         [item setObject:link forKey:@"link"];
@@ -121,6 +124,7 @@
 }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    // set values
     if ([element isEqualToString:@"title"]) {
         [title appendString:string];
         
@@ -131,6 +135,7 @@
 
 
 -(void)parserDidEndDocument:(NSXMLParser *)parser {
+    // upon rss feed completion reload table
     [self.tableView reloadData];
 }
 
