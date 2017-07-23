@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xd7-8l-2RZ">
-                                <rect key="frame" x="24" y="28" width="327" height="240.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xd7-8l-2RZ">
+                                <rect key="frame" x="24" y="28" width="327" height="343.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryi-Ua-qQn">
                                         <rect key="frame" x="124" y="0.0" width="79" height="20.5"/>
@@ -32,55 +32,72 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTa-9e-1Vj">
-                                        <rect key="frame" x="122" y="20.5" width="83" height="30"/>
+                                        <rect key="frame" x="122" y="28.5" width="83" height="30"/>
                                         <state key="normal" title="Shuffle Text"/>
                                         <connections>
                                             <action selector="doShuffleStringLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E4Y-6T-mYc"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Array of Int" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPX-Ic-GOM">
-                                        <rect key="frame" x="121" y="50.5" width="85" height="20.5"/>
+                                        <rect key="frame" x="121" y="66.5" width="85" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq8-Xf-NIH">
-                                        <rect key="frame" x="118.5" y="71" width="90" height="30"/>
+                                        <rect key="frame" x="118.5" y="95" width="90" height="30"/>
                                         <state key="normal" title="Shuffle Array"/>
                                         <connections>
                                             <action selector="doShuffleArray:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nwj-S8-qat"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHt-xM-b7L">
-                                        <rect key="frame" x="130.5" y="101" width="66" height="20.5"/>
+                                        <rect key="frame" x="130.5" y="133" width="66" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kKm-aa-HoN">
-                                        <rect key="frame" x="116.5" y="121.5" width="94" height="29"/>
+                                        <rect key="frame" x="116.5" y="161.5" width="94" height="29"/>
                                         <connections>
                                             <action selector="doCount:" destination="BYZ-38-t0r" eventType="valueChanged" id="fd2-Ny-yja"/>
                                         </connections>
                                     </stepper>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oyu-zp-U8Q">
-                                        <rect key="frame" x="6" y="150.5" width="315" height="31"/>
+                                        <rect key="frame" x="6" y="198.5" width="315" height="31"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="WTI-bR-0dR"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xAi-hu-TpI">
-                                        <rect key="frame" x="6" y="180.5" width="315" height="31"/>
+                                        <rect key="frame" x="6" y="236.5" width="315" height="31"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cM2-jw-egO"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DTe-Ed-N7f">
-                                        <rect key="frame" x="6" y="210.5" width="315" height="31"/>
+                                        <rect key="frame" x="6" y="274.5" width="315" height="31"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="bkk-rP-EQg"/>
                                         </connections>
                                     </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lC7-D2-Gxo">
+                                        <rect key="frame" x="69" y="312.5" width="189" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock RGB Slider: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMQ-Bb-Ofc">
+                                                <rect key="frame" x="0.0" y="0.0" width="132" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fet-dI-4Bp">
+                                                <rect key="frame" x="140" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="lockSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="38L-cF-igz"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Oyu-zp-U8Q" secondAttribute="trailing" constant="8" id="1kl-V2-lNS"/>
@@ -111,6 +128,7 @@
                         <outlet property="greenSlider" destination="xAi-hu-TpI" id="ssW-IJ-YkU"/>
                         <outlet property="myView" destination="8bC-Xf-vdC" id="XBx-fQ-omj"/>
                         <outlet property="redSlider" destination="Oyu-zp-U8Q" id="Y4n-1z-KpY"/>
+                        <outlet property="rgbSwitch" destination="fet-dI-4Bp" id="Pzh-7w-35D"/>
                         <outlet property="shuffleStringLabel" destination="ryi-Ua-qQn" id="Szg-q6-2Pa"/>
                     </connections>
                 </viewController>

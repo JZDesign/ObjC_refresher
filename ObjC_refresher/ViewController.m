@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+
+
+
+@property (strong, nonatomic) IBOutlet UISwitch *rgbSwitch;
 @property (strong, nonatomic) IBOutlet UIView *myView;
 @property (strong, nonatomic) IBOutlet UISlider *redSlider;
 @property (strong, nonatomic) IBOutlet UISlider *greenSlider;
@@ -20,6 +24,9 @@
 @property (nonatomic) NSMutableArray *shuffleArray;
 @property (nonatomic) int count;
 @property (nonatomic) NSMutableString *rnd;
+
+
+
 @end
 
 @implementation ViewController
@@ -53,6 +60,10 @@
 
 }
 
+
+
+
+
 - (IBAction)doShuffleStringLabel:(id)sender {
     // placeholder object for shuffle
     NSString *str;
@@ -68,6 +79,9 @@
     [self shuffleStringLabel].text = _rnd;
 }
 
+
+
+
 - (IBAction)doShuffleArray:(id)sender {
     
     for (NSInteger i = _shuffleArray.count - 1, j; i >= 0; i--) {
@@ -80,10 +94,15 @@
     
 }
 
+
+
+
 - (IBAction)doCount:(UIStepper *)sender {
     double value = [sender value];
     [_countLabel setText:[NSString stringWithFormat:@"Count: %d", (int)value]];
 }
+
+
 
 -(IBAction)sliderValueChanged:(UISlider *)sender {
     
@@ -102,6 +121,21 @@
             break;
     }
     _myView.backgroundColor = [UIColor colorWithRed:_redSlider.value green:_greenSlider.value blue:_blueSlider.value alpha:1];
+    
+}
+
+
+
+- (IBAction)lockSliders:(id)sender {
+    if (_rgbSwitch.on) {
+        _redSlider.enabled = true;
+        _greenSlider.enabled = true;
+        _blueSlider.enabled = true;
+    } else {
+        _redSlider.enabled = false;
+        _greenSlider.enabled = false;
+        _blueSlider.enabled = false;
+    }
     
 }
 
