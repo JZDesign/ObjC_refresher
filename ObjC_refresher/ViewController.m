@@ -123,7 +123,6 @@
     switch (sender.tag) {
         case 0:
             _redSlider.value = sender.value;
-            
             break;
         case 1:
             _greenSlider.value = sender.value;

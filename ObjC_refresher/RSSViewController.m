@@ -6,6 +6,23 @@
 //  Copyright © 2017 Jacob Rakidzich. All rights reserved.
 //
 
+
+/*
+ 
+ <item>
+     <title>Ann Coulter’s Delta Snafu Brings Twitter Together In This Week’s News Recap</title>
+     <description>The commentator Ann Coulter's dust-up with Delta finally gave the internet a reason to rally behind an airline.</description>
+     <link>https://www.wired.com/story/internet-week-129</link>
+     <guid isPermaLink="false">596f868157beec1e84cbd88b</guid>
+     <pubDate>Sun, 23 Jul 2017 13:00:00 +0000</pubDate>
+     <media:content/>
+         <category>Culture</category>
+         <media:keywords>Internet Week, While You Were Offline</media:keywords>
+         <dc:creator>Graeme McMillan</dc:creator>
+         <media:thumbnail url="https://media.wired.com/photos/5972448f88c660231060af44/master/pass/Ann-Coulter-675510342.jpg" width="2400" height="1800"/></item>
+ 
+ */
+
 #import "RSSViewController.h"
 @interface RSSViewController () {
     
@@ -14,6 +31,7 @@
     NSMutableDictionary *item;
     NSMutableString *title;
     NSMutableString *link;
+    
     NSString *element;
     
 }
@@ -29,6 +47,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // initialize array and parser for table view and rss feed
     feeds = [[NSMutableArray alloc] init];
     NSURL *url = [NSURL URLWithString:@"https://www.wired.com/feed/rss"];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
@@ -37,9 +57,10 @@
     [parser parse];
     
     
-    
+    // for dynamic cell size
     _tableView.estimatedRowHeight = 400.0;
     _tableView.rowHeight = UITableViewAutomaticDimension;
+    
     self.title = @"Wired.com RSS";
 }
 
@@ -53,6 +74,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // dynamic cell size
     return UITableViewAutomaticDimension;
 }
 
