@@ -7,7 +7,6 @@
 //
 
 #import "RSSViewController.h"
-#import "RSSEntry.h"
 @interface RSSViewController () {
     
     NSXMLParser *parser;
@@ -38,6 +37,7 @@
     [parser parse];
     
     
+    
     _tableView.estimatedRowHeight = 400.0;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     self.title = @"Wired.com RSS";
@@ -47,13 +47,17 @@
 # pragma MARK: TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    UIApplication *app = [UIApplication sharedApplication];
+    NSURL *url = [NSURL URLWithString:feeds[indexPath.row][@"link"]];
+    [app openURL:url options:nil completionHandler:nil];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
+
+
+
 
 # pragma MARK: TableViewDataSource
 

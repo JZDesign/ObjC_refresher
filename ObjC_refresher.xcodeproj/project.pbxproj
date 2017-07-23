@@ -14,7 +14,6 @@
 		420881F81F24F78300A7598C /* ObjC_refresher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 420881F61F24F78300A7598C /* ObjC_refresher.xcdatamodeld */; };
 		420881FA1F24F78300A7598C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420881F91F24F78300A7598C /* Assets.xcassets */; };
 		420881FD1F24F78300A7598C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420881FB1F24F78300A7598C /* LaunchScreen.storyboard */; };
-		420882091F2523AD00A7598C /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 420882081F2523AD00A7598C /* RSSEntry.m */; };
 		4208820C1F2527B600A7598C /* RSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208820B1F2527B600A7598C /* RSSViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +29,6 @@
 		420881F91F24F78300A7598C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		420881FC1F24F78300A7598C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		420881FE1F24F78300A7598C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		420882071F2523AD00A7598C /* RSSEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSEntry.h; sourceTree = "<group>"; };
-		420882081F2523AD00A7598C /* RSSEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSEntry.m; sourceTree = "<group>"; };
 		4208820A1F2527B600A7598C /* RSSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSViewController.h; sourceTree = "<group>"; };
 		4208820B1F2527B600A7598C /* RSSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,8 +100,6 @@
 		420882051F24F7BA00A7598C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				420882071F2523AD00A7598C /* RSSEntry.h */,
-				420882081F2523AD00A7598C /* RSSEntry.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -193,7 +188,6 @@
 				420881EF1F24F78300A7598C /* AppDelegate.m in Sources */,
 				420881F81F24F78300A7598C /* ObjC_refresher.xcdatamodeld in Sources */,
 				420881EC1F24F78300A7598C /* main.m in Sources */,
-				420882091F2523AD00A7598C /* RSSEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
