@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "RSSViewController.h"
 
 @interface ViewController ()
 
+@property (strong, nonatomic) IBOutlet UITextField *shuffleTextField;
 
 
 @property (strong, nonatomic) IBOutlet UISwitch *rgbSwitch;
@@ -31,8 +33,13 @@
 
 @implementation ViewController
 
+#pragma MARK: Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // set delegate
+    _shuffleTextField.delegate = self;
     
     _rnd = [NSMutableString stringWithString:@"Test Shuffle String"];
     _shuffleStringLabel.text = _rnd;
@@ -43,6 +50,12 @@
 
 }
 
+#pragma MARK: TextFieldDelegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return true;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,6 +63,7 @@
 }
 
 
+#pragma MARK: Helper Methods
 
 -(void)setArrayLabelText {
     NSMutableString *str = [NSMutableString stringWithString:@""];
@@ -62,7 +76,7 @@
 
 
 
-
+#pragma MARK: Actions
 
 - (IBAction)doShuffleStringLabel:(id)sender {
     // placeholder object for shuffle
@@ -138,5 +152,36 @@
     }
     
 }
+
+
+- (IBAction)doSetText:(id)sender {
+    if (![_shuffleTextField.text  isEqual: @""]) {
+        _rnd = [NSMutableString stringWithFormat:_shuffleTextField.text];
+        _shuffleStringLabel.text = _rnd;
+    }
+}
+
+
+# pragma MARK: Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"RSS"]) {
+       
+        //[self performSegueWithIdentifier:@"RSS" sender:self];
+        
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+        RSSViewController *vc = segue.destinationViewController;
+        
+        
+    }
+}
+
+- (IBAction)doRSSSegue:(id)sender {
+    [self performSegueWithIdentifier:@"RSS" sender:self];
+    
+}
+
+
+
 
 @end
