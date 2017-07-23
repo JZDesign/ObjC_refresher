@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UIView *myView;
+@property (strong, nonatomic) IBOutlet UISlider *redSlider;
+@property (strong, nonatomic) IBOutlet UISlider *greenSlider;
+@property (strong, nonatomic) IBOutlet UISlider *blueSlider;
 @property (strong, nonatomic) IBOutlet UILabel *shuffleStringLabel;
 @property (strong, nonatomic) IBOutlet UILabel *arrayLabel;
 @property (strong, nonatomic) IBOutlet UILabel *countLabel;
@@ -79,6 +83,26 @@
 - (IBAction)doCount:(UIStepper *)sender {
     double value = [sender value];
     [_countLabel setText:[NSString stringWithFormat:@"Count: %d", (int)value]];
+}
+
+-(IBAction)sliderValueChanged:(UISlider *)sender {
+    
+    switch (sender.tag) {
+        case 0:
+            _redSlider.value = sender.value;
+            
+            break;
+        case 1:
+            _greenSlider.value = sender.value;
+            break;
+        case 2:
+            _blueSlider.value = sender.value;
+            break;
+        default:
+            break;
+    }
+    _myView.backgroundColor = [UIColor colorWithRed:_redSlider.value green:_greenSlider.value blue:_blueSlider.value alpha:1];
+    
 }
 
 @end
