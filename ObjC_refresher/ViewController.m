@@ -76,7 +76,9 @@
     
 }
 
-- (IBAction)doCount:(id)sender {
+- (IBAction)doCount:(UIStepper *)sender {
+    double value = [sender value];
+    [_countLabel setText:[NSString stringWithFormat:@"Count: %d", (int)value]];
 }
 
 @end
